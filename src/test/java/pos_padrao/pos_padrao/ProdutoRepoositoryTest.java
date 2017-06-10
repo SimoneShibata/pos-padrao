@@ -4,6 +4,10 @@ import junit.framework.Assert;
 
 import org.junit.Test;
 
+import pos_padrao.domains.Produto;
+import pos_padrao.repositories.ProdutoRepository;
+import pos_padrao.repositories.ProdutoRepositoryTransient;
+
 public class ProdutoRepoositoryTest {
 
 	@Test

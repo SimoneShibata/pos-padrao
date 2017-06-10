@@ -7,6 +7,10 @@ import java.util.List;
 import org.junit.Assert;
 import org.junit.Test;
 
+import pos_padrao.domains.Produto;
+import pos_padrao.proxy.CollectionProxyCreator;
+import pos_padrao.repositories.ProdutoRepositoryTransient;
+
 public class CollectionProxyCreatorTest {
 
 	@Test
