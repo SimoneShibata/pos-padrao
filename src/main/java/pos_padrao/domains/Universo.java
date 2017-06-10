@@ -4,13 +4,17 @@ public class Universo {
 	
 	private static Universo instance;
 	
-	public Universo() {}
+	private Universo() {}
 	
-	public static Universo getUniverso() {
+	public static Universo getInstance() {
 		if (instance == null) {
-			instance = new Universo();
+			instance = new Universo.UniversoParalelo();
 		}
 		return instance;
 	}
 	
+	private static class UniversoParalelo extends Universo {
+
+	}
+
 }
