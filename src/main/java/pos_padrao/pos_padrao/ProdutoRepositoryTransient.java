@@ -28,7 +28,7 @@ public class ProdutoRepositoryTransient implements ProdutoRepository {
 		  }
 		}
 	}
-
+	
 	public Produto findById(ProdutoId id) {
 //		return this.produtos.stream().filter(p -> id.equals(p.getId())).orElse(null);
 		for (Produto produto : this.produtos) {
