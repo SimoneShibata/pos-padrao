@@ -29,7 +29,7 @@ public class Pedido {
 	}
 
 	public ItemPedido adicionarItem(Produto produto, BigDecimal quantidade,
-			BigDecimal preco, BigDecimal desconto) {
+			BigDecimal preco, Desconto desconto) {
 
 		ItemPedido item = new ItemPedido(produto, quantidade, preco, desconto);
 		this.itens.add(item);
@@ -41,10 +41,7 @@ public class Pedido {
 		BigDecimal total = BigDecimal.ZERO;
 
 		for (ItemPedido itemPedido : itens) {
-			BigDecimal valorItemPedido = itemPedido.getQuantidade()
-					.multiply(itemPedido.getPreco())
-					.subtract(itemPedido.getDesconto());
-			total = total.add(valorItemPedido);
+			total = total.add(itemPedido.getDesconto().calcularValorLiquido(itemPedido.getPreco().multiply(itemPedido.getQuantidade())));
 		}
 
 		return total;
@@ -56,10 +53,10 @@ public class Pedido {
 		private Produto produto;
 		private BigDecimal quantidade;
 		private BigDecimal preco;
-		private BigDecimal desconto;
+		private Desconto desconto;
 
 		private ItemPedido(Produto produto, BigDecimal quantidade,
-				BigDecimal preco, BigDecimal desconto) {
+				BigDecimal preco, Desconto desconto) {
 			this.produto = produto;
 			this.quantidade = quantidade;
 			this.preco = preco;
@@ -79,7 +76,7 @@ public class Pedido {
 			return preco;
 		}
 
-		public BigDecimal getDesconto() {
+		public Desconto getDesconto() {
 			return desconto;
 		}
 
