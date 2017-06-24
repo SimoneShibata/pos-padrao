@@ -10,8 +10,10 @@ public class SingletonTest {
 
 	@Test
 	public void test() {
-		System.out.println(Universo.getInstance());
-		assertSame(Universo.getInstance(), Universo.getInstance());
+		Universo u1 = Universo.getInstance();
+		Universo u2 = Universo.getInstance();
+
+		assertSame(u1, u2);
 	}
 
 }

@@ -8,13 +8,24 @@ public class Universo {
 	
 	public static Universo getInstance() {
 		if (instance == null) {
-			instance = new Universo.UniversoParalelo();
+			instance = new UniversoParalelo();
 		}
 		return instance;
 	}
 	
-	private static class UniversoParalelo extends Universo {
-
+	public void expandir() {
+		System.out.println("Universo expandindo...");
+	}
+	
+	static class UniversoParalelo extends Universo {
+		private UniversoParalelo(){
+			
+		}
+		
+		@Override
+		public void expandir() {
+			System.out.println("Universo Paralelo expandindo paralelamente...");
+		}
 	}
 
 }
