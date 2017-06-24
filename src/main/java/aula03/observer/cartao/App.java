@@ -14,6 +14,8 @@ public class App {
 			}
 		});
 		
+//		ObservadorDeDebitoComposite observadorOp = new ObservadorDeDebitoComposite(observadores)
+		
 		visa.debitar(1000.00);
 		visa.debitar(500.00);
 		master.debitar(350.00);
